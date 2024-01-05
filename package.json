@@ -1,14 +1,24 @@
 {
-  "name": "express",
+  "name": "crm-backend-api",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "dist/app.js",
+  "scripts": {
+        "build": "tsc",
+        "start": "nodemon --exec ts-node src/app.ts",
+        "format:check": "prettier --check .",
+        "format:write": "prettier --write .",
+        "lint:check": "eslint .",
+        "lint:fix": "eslint --fix ."
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+
+
   "dependencies": {
-    "alert": "^5.0.6",
     "body-parser": "^1.19.0",
-    "bootstrap": "^4.5.3",
     "cookie-parser": "^1.4.5",
-    "ejs": "^3.1.5",
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
     "express-fileupload": "^1.2.0",
@@ -16,23 +26,12 @@
     "express-validator": "^6.6.1",
     "fast-csv": "^4.3.5",
     "fs": "0.0.1-security",
-    "html-pdf": "^2.2.0",
     "mysql": "^2.18.1",
     "node": "^15.2.0",
-    "nodemailer": "^6.4.16",
-    "pdfkit": "^0.11.0",
-    "pdfmake": "^0.1.68",
-    "phantom": "^6.3.0",
-    "popups": "^1.1.3"
+    "nodemailer": "^6.4.16"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
-  },
-  "scripts": {
-    "watch": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
+
 }

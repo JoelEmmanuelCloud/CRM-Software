@@ -12,7 +12,7 @@ export const userController = {
     const sql = `select * from adminuser where username='${user.username}' and password='${user.password}'`;
     console.log(sql);
 
-    db.getResults(sql, (results) => {
+    db.getResults(sql, (results: string | any[]) => {
       if (results.length > 0) {
         callback(results[0]);
       } else {
@@ -24,7 +24,7 @@ export const userController = {
   getById: (id: string, callback: (result: any) => void): void => {
     const sql = `select * from adminuser where id='${id}'`;
 
-    db.getResults(sql, (results) => {
+    db.getResults(sql, (results: string | any[]) => {
       if (results.length > 0) {
         callback(results[0]);
       }
@@ -34,7 +34,7 @@ export const userController = {
   getAll: (callback: (results: any[]) => void): void => {
     const sql = 'select * from adminuser';
 
-    db.getResults(sql, (results) => {
+    db.getResults(sql, (results: any[]) => {
       callback(results);
     });
   },
@@ -44,7 +44,7 @@ export const userController = {
 
     // console.log(sql);
 
-    db.execute(sql, (status) => {
+    db.execute(sql, (status: any) => {
       callback(status);
     });
   },
@@ -52,7 +52,7 @@ export const userController = {
   update: (user: User, callback: (status: any) => void): void => {
     const sql = `update adminuser set username='${user.username}' , password='${user.password}' , type='${user.type}' where id = '${user.id}'`;
 
-    db.execute(sql, (status) => {
+    db.execute(sql, (status: any) => {
       callback(status);
     });
   },
@@ -61,7 +61,7 @@ export const userController = {
     const sql = `DELETE FROM adminuser WHERE id = '${id}'`;
     console.log(sql);
 
-    db.execute(sql, (status) => {
+    db.execute(sql, (status: any) => {
       callback(status);
     });
   },

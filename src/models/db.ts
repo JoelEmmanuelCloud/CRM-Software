@@ -48,3 +48,11 @@ export const db = {
     });
   }
 };
+
+export function getResults(sql: string, arg1: (results: string | any[]) => void) {
+  throw new Error('Function not implemented.');
+}
+
+export function execute(sql: string, arg1: (status: any) => void) {
+  throw new Error('Function not implemented.');
+}
